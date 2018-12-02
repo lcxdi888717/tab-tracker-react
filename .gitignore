@@ -28,3 +28,4 @@
 
 
 # Server side ignores
+/server/node_modules
