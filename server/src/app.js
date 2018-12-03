@@ -7,12 +7,14 @@ const port = 8081;
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
+app.use(morgan("combined"));
 
 app.get("/status", (req, res) => res.send("Hello World!"));
 
 app.post("/register", (req, res) =>
   res
-    .status(400)
+    .status(200)
     .send(`Receive Email: ${req.body.email} & Password: ${req.body.password}`)
 );
 
