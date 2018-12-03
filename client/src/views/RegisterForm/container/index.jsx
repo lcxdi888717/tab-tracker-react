@@ -1,5 +1,6 @@
 import { Button, Checkbox, Form, Icon, Input } from "antd";
 import React, { Component } from "react";
+import { tryRegister } from "../../../services";
 
 const FormItem = Form.Item;
 
@@ -9,6 +10,7 @@ class RegisterForm extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log("Received values of form: ", values);
+        tryRegister("http://localhost:8081/register", values);
       }
     });
   };
